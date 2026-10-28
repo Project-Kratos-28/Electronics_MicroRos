@@ -75,8 +75,7 @@ void arm_cb(const void * msgin) {
 
 void drive_cb(const void * msgin) {
   (void)msgin;
-  //custom_status_msg.wheel_vel[x]; for array
-  // custom_status_msg.wheel_angle[x]; for array
+  //custom_status_msg.wheel_info[x]; for array
   // Add your drive callback logic here
 }
 

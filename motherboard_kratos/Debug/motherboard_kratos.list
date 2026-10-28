@@ -3247,8 +3247,7 @@ void drive_cb(const void * msgin) {
  80016f8:	af00      	add	r7, sp, #0
  80016fa:	6078      	str	r0, [r7, #4]
   (void)msgin;
-  //custom_status_msg.wheel_vel[x]; for array
-  // custom_status_msg.wheel_angle[x]; for array
+  //custom_status_msg.wheel_info[x]; for array
   // Add your drive callback logic here
 }
  80016fc:	bf00      	nop
