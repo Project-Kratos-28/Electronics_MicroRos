@@ -66,7 +66,7 @@ main-build: motherboard_kratos.elf secondary-outputs
 
 # Tool invocations
 motherboard_kratos.elf motherboard_kratos.map: $(OBJS) $(USER_OBJS) /home/teerth/STM32Projects/motherboard_kratos/STM32H753ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "motherboard_kratos.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/teerth/STM32Projects/motherboard_kratos/STM32H753ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motherboard_kratos.map" -Wl,--gc-sections -static -L/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "motherboard_kratos.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/teerth/STM32Projects/motherboard_kratos/STM32H753ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motherboard_kratos.map" -Wl,--gc-sections -static -L"/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

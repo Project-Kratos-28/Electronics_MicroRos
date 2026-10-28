@@ -1,11 +1,11 @@
 Core/Src/it_transport.o: ../Core/Src/it_transport.c \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/transport.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/config.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/core/communication/communication.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/visibility.h \
- /home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/rmw_microxrcedds_c/config.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/transport.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/config.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/core/communication/communication.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/visibility.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/rmw_microxrcedds_c/config.h \
  ../Core/Inc/main.h ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -43,13 +43,13 @@ Core/Src/it_transport.o: ../Core/Src/it_transport.c \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Drivers/CMSIS/RTOS2/Include/cmsis_os2.h
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/transport.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/config.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/core/communication/communication.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/visibility.h:
-/home/teerth/STM32Projects/microROS_led/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/rmw_microxrcedds_c/config.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/transport.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/config.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/core/communication/communication.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/uxr/client/visibility.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/rmw_microxrcedds_c/config.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:

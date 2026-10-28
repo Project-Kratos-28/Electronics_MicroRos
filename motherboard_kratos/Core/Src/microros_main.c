@@ -109,7 +109,7 @@ static bool ros_create(void)
   /* 3 handles for the 3 subscribers */
   RCCHECK(rclc_executor_init(&executor, &support.context, 3, &allocator));
   RCCHECK(rclc_executor_add_subscription(&executor, &arm_message_subscriber, &custom_status_msg.arm_cmd, &arm_cb, ON_NEW_DATA));
-  RCCHECK(rclc_executor_add_subscription(&executor, &drive_message_subscriber, &custom_status_msg.wheel_angle, &drive_cb, ON_NEW_DATA));
+  RCCHECK(rclc_executor_add_subscription(&executor, &drive_message_subscriber, &custom_status_msg.wheel_info, &drive_cb, ON_NEW_DATA));
   RCCHECK(rclc_executor_add_subscription(&executor, &misc_message_subscriber, &misc_msg, &misc_cb, ON_NEW_DATA));
 
   return true;
