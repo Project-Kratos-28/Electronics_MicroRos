@@ -20,7 +20,11 @@
 #include <std_msgs/msg/bool.h>
 #include <std_msgs/msg/float32_multi_array.h>
 #include <geometry_msgs/msg/twist.h>
-#include <kratos_teerth_rohan_pandya_msgs/msg/rover_status.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h>
+#include "motor_control.h"
+#include <stdbool.h>
+
 /* --- Macros --- */
 #define SPIN_TIMEOUT_MS   10
 #define PING_PERIOD_MS    1000
@@ -38,7 +42,9 @@ typedef enum states {
 
 /* --- Externs & Transport Prototypes --- */
 extern UART_HandleTypeDef huart3;
-
+extern volatile bool flag;
+volatile double arm_cmd[7]    = {0};
+volatile double wheel_info[8] = {0};
 bool cubemx_transport_open(struct uxrCustomTransport * transport);
 bool cubemx_transport_close(struct uxrCustomTransport * transport);
 size_t cubemx_transport_write(struct uxrCustomTransport* transport, const uint8_t * buf, size_t len, uint8_t * err);
@@ -55,26 +61,43 @@ static rclc_support_t   support;
 static rcl_node_t       node;
 static rclc_executor_t  executor;
 
-rcl_subscription_t arm_message_subscriber;
+rcl_subscription_t payload_message_subscriber;
 rcl_subscription_t drive_message_subscriber;
 rcl_subscription_t misc_message_subscriber;
+
+kratos_teerth_rohan_pandya_msgs__msg__ArmCmd   arm_msg;
+kratos_teerth_rohan_pandya_msgs__msg__WheelCmd wheel_msg;
+std_msgs__msg__Bool                            misc_msg;
 
 
 std_msgs__msg__Bool misc_msg;
 
-kratos_teerth_rohan_pandya_msgs__msg__RoverStatus custom_status_msg;
+
 volatile HAL_StatusTypeDef tx_ret;   // global, so Live Expressions can read it
-#define ARM_DATA_CAPACITY 8   // set to your number of joints/values
+  // set to your number of joints/values
 
 /* --- Subscriber Callbacks --- */
-void arm_cb(const void * msgin) {
+void payload_cb(const void * msgin) {
   (void)msgin;
+  const kratos_teerth_rohan_pandya_msgs__msg__ArmCmd * m =
+        (const kratos_teerth_rohan_pandya_msgs__msg__ArmCmd *)msgin;
+
+    taskENTER_CRITICAL();
+    flag = m->use_arm;
+    memcpy((void *)arm_cmd, m->arm_cmd, sizeof(arm_cmd));
+    taskEXIT_CRITICAL();
   //  custom_status_msg.arm_cmd[x]; for array
   // Add your arm callback logic here
 }
 
 void drive_cb(const void * msgin) {
   (void)msgin;
+  const kratos_teerth_rohan_pandya_msgs__msg__WheelCmd * m =
+        (const kratos_teerth_rohan_pandya_msgs__msg__WheelCmd *)msgin;
+
+    taskENTER_CRITICAL();
+    memcpy((void *)wheel_info, m->wheel_info, sizeof(wheel_info));
+    taskEXIT_CRITICAL();
   //custom_status_msg.wheel_info[x]; for array
   // Add your drive callback logic here
 }
@@ -90,7 +113,7 @@ static bool ros_create(void)
 {
   memset(&support, 0, sizeof(support));
   node = rcl_get_zero_initialized_node();
-  arm_message_subscriber   = rcl_get_zero_initialized_subscription();
+  payload_message_subscriber   = rcl_get_zero_initialized_subscription();
   drive_message_subscriber = rcl_get_zero_initialized_subscription();
   misc_message_subscriber  = rcl_get_zero_initialized_subscription();
   executor = rclc_executor_get_zero_initialized_executor();
@@ -99,19 +122,18 @@ static bool ros_create(void)
   RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
   RCCHECK(rclc_node_init_default(&node, "rover_node", "", &support));
 
-  RCCHECK(rclc_subscription_init_best_effort(&arm_message_subscriber, &node,
-            ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32MultiArray), "arm_cmd"));
+  RCCHECK(rclc_subscription_init_best_effort(&payload_message_subscriber, &node,
+            ROSIDL_GET_MSG_TYPE_SUPPORT(kratos_teerth_rohan_pandya_msgs, msg, ArmCmd), "payload_cmd"));
   RCCHECK(rclc_subscription_init_best_effort(&drive_message_subscriber, &node,
-            ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist), "cmd_vel"));
+            ROSIDL_GET_MSG_TYPE_SUPPORT(kratos_teerth_rohan_pandya_msgs, msg, WheelCmd), "cmd_vel"));
   RCCHECK(rclc_subscription_init_best_effort(&misc_message_subscriber, &node,
             ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Bool), "misc_topic"));
 
   /* 3 handles for the 3 subscribers */
   RCCHECK(rclc_executor_init(&executor, &support.context, 3, &allocator));
-  RCCHECK(rclc_executor_add_subscription(&executor, &arm_message_subscriber, &custom_status_msg.arm_cmd, &arm_cb, ON_NEW_DATA));
-  RCCHECK(rclc_executor_add_subscription(&executor, &drive_message_subscriber, &custom_status_msg.wheel_info, &drive_cb, ON_NEW_DATA));
-  RCCHECK(rclc_executor_add_subscription(&executor, &misc_message_subscriber, &misc_msg, &misc_cb, ON_NEW_DATA));
-
+  RCCHECK(rclc_executor_add_subscription(&executor, &payload_message_subscriber, &arm_msg,   &payload_cb, ON_NEW_DATA));
+  RCCHECK(rclc_executor_add_subscription(&executor, &drive_message_subscriber,   &wheel_msg, &drive_cb,   ON_NEW_DATA));
+  RCCHECK(rclc_executor_add_subscription(&executor, &misc_message_subscriber,    &misc_msg,  &misc_cb,    ON_NEW_DATA));
   return true;
 }
 
@@ -124,7 +146,7 @@ static void ros_destroy(void)
 
   rcl_ret_t rc;
   rc = rclc_executor_fini(&executor);
-  rc = rcl_subscription_fini(&arm_message_subscriber, &node);
+  rc = rcl_subscription_fini(&payload_message_subscriber, &node);
   rc = rcl_subscription_fini(&drive_message_subscriber, &node);
   rc = rcl_subscription_fini(&misc_message_subscriber, &node);
   rc = rcl_node_fini(&node);

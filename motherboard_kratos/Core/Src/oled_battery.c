@@ -3,7 +3,8 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os2.h"
-#include <kratos_teerth_rohan_pandya_msgs/msg/rover_status.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h>
 void oled_battery_Run(void *argument)
 {
     /* Initialization code for oled_battery goes here (runs once) */

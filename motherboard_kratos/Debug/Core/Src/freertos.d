@@ -247,11 +247,15 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Core/Inc/motor_control.h ../Core/Inc/sensor_polling.h \
  ../Core/Inc/ld_sensors.h ../Core/Inc/oled_battery.h \
  ../Core/Inc/microros_main.h \
- /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/rover_status.h \
- /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__struct.h \
- /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__functions.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__struct.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__functions.h \
  /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/rosidl_generator_c__visibility_control.h \
- /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__type_support.h
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__type_support.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__struct.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__functions.h \
+ /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__type_support.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -504,8 +508,12 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/ld_sensors.h:
 ../Core/Inc/oled_battery.h:
 ../Core/Inc/microros_main.h:
-/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/rover_status.h:
-/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__struct.h:
-/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__functions.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__struct.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__functions.h:
 /home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/rosidl_generator_c__visibility_control.h:
-/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/rover_status__type_support.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/arm_cmd__type_support.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__struct.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__functions.h:
+/home/teerth/STM32Projects/motherboard_kratos/micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include/kratos_teerth_rohan_pandya_msgs/msg/detail/wheel_cmd__type_support.h:

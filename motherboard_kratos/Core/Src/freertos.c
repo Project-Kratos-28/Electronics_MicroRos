@@ -48,7 +48,8 @@
 #include "ld_sensors.h"
 #include "oled_battery.h"
 #include "microros_main.h"
-#include <kratos_teerth_rohan_pandya_msgs/msg/rover_status.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

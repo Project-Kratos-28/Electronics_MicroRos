@@ -14,7 +14,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/RoverStatus.msg"
+ "msg/ArmCmd.msg"
+ "msg/WheelCmd.msg"
 )
 
 if(BUILD_TESTING)

@@ -38,7 +38,8 @@
 #include <std_msgs/msg/int32.h>
 #include <std_msgs/msg/bool.h>
 #include "stdio.h"
-#include <kratos_teerth_rohan_pandya_msgs/msg/rover_status.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/arm_cmd.h>
+#include <kratos_teerth_rohan_pandya_msgs/msg/wheel_cmd.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
