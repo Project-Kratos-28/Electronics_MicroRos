@@ -1,0 +1,6 @@
+../Core/Src/microros_main.c:80:6:payload_cb	24	static
+../Core/Src/microros_main.c:93:6:drive_cb	24	static
+../Core/Src/microros_main.c:105:6:misc_cb	16	static
+../Core/Src/microros_main.c:112:13:ros_create	176	static
+../Core/Src/microros_main.c:140:13:ros_destroy	16	static
+../Core/Src/microros_main.c:161:6:microros_main_Run	64	static

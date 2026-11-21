@@ -1,0 +1,6 @@
+../Core/Src/microros_main.c:80:6:payload_cb	1
+../Core/Src/microros_main.c:93:6:drive_cb	1
+../Core/Src/microros_main.c:105:6:misc_cb	1
+../Core/Src/microros_main.c:112:13:ros_create	10
+../Core/Src/microros_main.c:140:13:ros_destroy	2
+../Core/Src/microros_main.c:161:6:microros_main_Run	12

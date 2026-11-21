@@ -1,0 +1,7 @@
+../Core/Src/freertos.c:157:6:MX_FREERTOS_Init	8	static
+../Core/Src/freertos.c:213:6:StartDefaultTask	16	static
+../Core/Src/freertos.c:232:6:StartTask02	16	static
+../Core/Src/freertos.c:252:6:StartTask04	16	static
+../Core/Src/freertos.c:272:6:StartTask07	16	static
+../Core/Src/freertos.c:286:5:_gettimeofday	32	static
+../Core/Src/freertos.c:298:6:custom_subscriber_callback	24	static
